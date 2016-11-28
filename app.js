@@ -24,7 +24,7 @@ global.Schema = mongoose.Schema;
 global.ctrlVouchers ={};
 var configs = require("./configs");
 global.port = process.env.PORT || 8000;
-var connect = mongoose.connect(configs.database.url,{user: 'stdev',pass: 'stdev'});
+var connect = mongoose.connect(configs.database.url,{auth:{authdb:"admin"}});
 //app
 var app = express();
 app.use(function(req, res, next) {
