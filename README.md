@@ -64,3 +64,5 @@
 
 ## License
 GNU AFFERO GENERAL PUBLIC LICENSE Version 3
+
+npm install -g node-inspector
