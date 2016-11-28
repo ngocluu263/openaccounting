@@ -20,7 +20,7 @@ var express = require("express");
 var ObjectId = require('mongoose').Schema.ObjectId
 var underscore = require("underscore");
 var passport = require("passport");
-var path = require("path");
+var path = require("path")
 var multer = require('multer');
 
 module.exports = function(app){
@@ -71,7 +71,7 @@ module.exports = function(app){
 			});
 		}
 	);
-	router.use(multer({ dest: './uploads/'}).single('fileupload'));
+	router.use(multer({ dest: './uploads'}).single('fileupload'));
 	
 	app.use("/api",router);
 	//vouchers
@@ -97,7 +97,7 @@ module.exports = function(app){
 	});
 	//sys router 
 	var sys_router = express.Router();
-	sys_router.use(multer({ dest: './uploads/'}).single('fileupload'));
+	sys_router.use(multer({ dest: './uploads'}).single('fileupload'));
 	sys_router.use(passport.authenticate('bearer', { session: false }));
 	app.use("/api",sys_router);
 	//
@@ -138,7 +138,7 @@ module.exports = function(app){
 		}
 		
 	});
-	public_router.use(multer({ dest: './uploads/'}).single('fileupload'));
+	public_router.use(multer({ dest: './uploads'}).single('fileupload'));
 	app.use("/public",public_router);
 	fs.readdirSync("./modules/public").forEach(function(file){
 		if(file.substr(-3)==".js"){
