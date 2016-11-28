@@ -20,8 +20,10 @@ var express = require("express");
 var ObjectId = require('mongoose').Schema.ObjectId
 var underscore = require("underscore");
 var passport = require("passport");
-var path = require("path")
-var multer  = require('multer')
+var path = require("path");
+var multer = require('multer');
+var upload = multer({ dest: './uploads' });
+
 module.exports = function(app){
 	//authentications
 	var auth_google = require("./auths/google");
