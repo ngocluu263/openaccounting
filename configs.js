@@ -21,7 +21,7 @@ exports.version ="0.0.1 beta"
 var wellknown = require('nodemailer-wellknown');
 var sender = wellknown('Gmail');
 sender.auth = {
-		user: 'email',
+		user: 'ngocluu263@gmail.com',
 		pass: 'password'
 	}
 sender.name ="Open Accounting";
@@ -43,5 +43,5 @@ exports.facebook = {
 }
 //
 exports.database = {
-	url:"mongodb://stdev:stdev@127.0.0.1/acc_v1"
+	url:"mongodb://127.0.0.1/acc_v1"
 }
