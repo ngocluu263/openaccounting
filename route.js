@@ -57,7 +57,7 @@ module.exports = function(app){
 	router.param('id_app',
 		function(req,res,next,id_app){
 			var email = req.user.email;
-			appModel.find({_id:ObjectId(id_app),$or:[{user_created:email},{participants:{$elemMatch:{email:email}}}]},function(error,results){
+			appModel.find({_id:id_app,$or:[{user_created:email},{participants:{$elemMatch:{email:email}}}]},function(error,results){
 				if(error) return next(error);
 				if(results.length==0){
 					return res.status(400).send("Không có quyền");
