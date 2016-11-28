@@ -154,13 +154,13 @@ module.exports = function(router){
 		var folder = "excels";
 		var id_app = req.query.id_app;
 		//
-		//if(!req.file.fileupload){
-		//	res.status(400).send("File không tồn tại");
-		//	return;
-		//}
-		//
+		if(!req.files){
+			res.status(400).send("File không tồn tại");
+			return;
+		}
+		
 		var path = require('path');
-		var ext = path.extname(req.files.fileupload.path);
+		var ext = path.extname(req.files.path);
 		if(ext){
 			ext = ext.toLowerCase();
 			if(ext!='.xlsx'){
