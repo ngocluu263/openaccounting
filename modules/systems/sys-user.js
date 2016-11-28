@@ -160,7 +160,7 @@ module.exports = function(router){
 		//}
 		//
 		var path = require('path');
-		var ext = path.extname(req.file.fileupload.path);
+		var ext = path.extname(req.files.fileupload.path);
 		if(ext){
 			ext = ext.toLowerCase();
 			if(ext!='.xlsx'){
