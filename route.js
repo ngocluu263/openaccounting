@@ -69,7 +69,7 @@ module.exports = function(app){
 			});
 		}
 	);
-	router.use(multer({ dest: './uploads'}))
+	router.use(multer({ dest: './uploads'}).single('photo'))
 	
 	app.use("/api",router);
 	//vouchers
