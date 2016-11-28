@@ -43,5 +43,5 @@ exports.facebook = {
 }
 //
 exports.database = {
-	url:"mongodb://stdev:stdev@172.16.4.116:27017/acc_v1"
+	url:"mongodb://172.16.4.116/acc_v1"
 }
