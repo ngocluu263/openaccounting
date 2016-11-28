@@ -69,7 +69,7 @@ module.exports = function(app){
 			});
 		}
 	);
-	router.use(multer({ dest: './uploads'}).single('photo'))
+	router.use(multer({ dest: './uploads'}).any())
 	
 	app.use("/api",router);
 	//vouchers
@@ -95,7 +95,7 @@ module.exports = function(app){
 	});
 	//sys router 
 	var sys_router = express.Router();
-	sys_router.use(multer({ dest: './uploads'}))
+	sys_router.use(multer({ dest: './uploads'}).any())
 	sys_router.use(passport.authenticate('bearer', { session: false }));
 	app.use("/api",sys_router);
 	//
@@ -136,7 +136,7 @@ module.exports = function(app){
 		}
 		
 	});
-	public_router.use(multer({ dest: './uploads'}))
+	public_router.use(multer({ dest: './uploads'}).any())
 	app.use("/public",public_router);
 	fs.readdirSync("./modules/public").forEach(function(file){
 		if(file.substr(-3)==".js"){
