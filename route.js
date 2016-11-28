@@ -17,6 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 var fs = require("fs");
 var appModel = require("./models/app");
 var express = require("express");
+var ObjectId = require('mongoose').Schema.ObjectId
 var underscore = require("underscore");
 var passport = require("passport");
 var path = require("path")
@@ -56,7 +57,7 @@ module.exports = function(app){
 	router.param('id_app',
 		function(req,res,next,id_app){
 			var email = req.user.email;
-			appModel.findOne({_id: new ObjectId(id_app),$or:[{user_created:email},{participants:{$elemMatch:{email:email}}}]},function(error,results){
+			appModel.find({_id:ObjectId(id_app),$or:[{user_created:email},{participants:{$elemMatch:{email:email}}}]},function(error,results){
 				if(error) return next(error);
 				if(results.length==0){
 					return res.status(400).send("Không có quyền");
