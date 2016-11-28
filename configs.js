@@ -27,7 +27,7 @@ sender.auth = {
 sender.name ="Open Accounting";
 exports.sender = sender;
 //user admin
-exports.admins =['ngocluu263@gmail.com','ngocluu263@gmail.com']
+exports.admins =['ngocluu263@gmail.com','ngocluu2631@gmail.com']
 //oauth2.0
 exports.google = {
 		clientID: "cliendID",
