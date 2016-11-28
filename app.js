@@ -19,6 +19,7 @@ var passport = require("passport");
 var phantom = require('phantom');
 //database
 global.mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
 global.Schema = mongoose.Schema;
 global.ctrlVouchers ={};
 var configs = require("./configs");
